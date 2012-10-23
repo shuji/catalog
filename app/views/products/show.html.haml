@@ -4,6 +4,8 @@
   %b Name:
   = @product.name
 %p
+  = image_tag(@product.image_url) if @product.image?
+%p
   %b Price:
   = @product.price
 %p

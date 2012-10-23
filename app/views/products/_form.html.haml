@@ -10,10 +10,15 @@
     = f.label :name
     = f.text_field :name
   .field
+    = f.label :price
+    = f.number_field :price
+  .field
     = f.label :description
     = f.text_area :description
   .field
-    = f.label :price
-    = f.number_field :price
+    = f.label :image
+    = image_tag(@product.image_url) if @product.image?
+    = f.file_field :image
+    = f.hidden_field :image_cache
   .actions
     = f.submit 'Save'

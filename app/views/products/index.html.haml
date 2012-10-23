@@ -3,6 +3,7 @@
 %table
   %tr
     %th Name
+    %th Image
     %th Price
     %th Description
     %th
@@ -12,6 +13,7 @@
   - @products.each do |product|
     %tr
       %td= product.name
+      %td= image_tag(product.image_url, height: 42) if product.image?
       %td= product.price
       %td= simple_format product.description
       %td= link_to 'Show', product
