@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem 'haml-rails'
 gem 'carrierwave'
 gem 'sass-rails-bootstrap'
+gem 'active_decorator'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

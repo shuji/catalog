@@ -13,9 +13,9 @@
   - @products.each do |product|
     %tr
       %td= product.name
-      %td= image_tag(product.image_url, height: 42) if product.image?
-      %td= product.price
-      %td= simple_format product.description
+      %td= product.display_image
+      %td= product.display_price
+      %td= product.display_description
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
