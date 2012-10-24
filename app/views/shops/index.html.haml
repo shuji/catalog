@@ -1,0 +1,25 @@
+%h1 Listing shops
+
+%table
+  %tr
+    %th Name
+    %th Image
+    %th Description
+    %th Lines summary
+    %th
+    %th
+    %th
+
+  - @shops.each do |shop|
+    %tr
+      %td= shop.name
+      %td= image_tag(shop.image_url, height: 42) if shop.image?
+      %td= simple_format shop.description
+      %td= simple_format shop.lines_summary
+      %td= link_to 'Show', shop
+      %td= link_to 'Edit', edit_shop_path(shop)
+      %td= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Shop', new_shop_path
