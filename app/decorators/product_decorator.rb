@@ -14,4 +14,8 @@ module ProductDecorator
     simple_format description
   end
 
+  def label_recommend
+    content_tag :span, "オススメ", class: "label label-info" if recommend?
+  end
+
 end

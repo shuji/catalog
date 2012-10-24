@@ -42,6 +42,9 @@ GEM
     carrierwave (0.7.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
+    cells (3.8.6)
+      actionpack (~> 3.0)
+      railties (~> 3.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     coffee-rails (3.2.2)
@@ -167,6 +170,7 @@ PLATFORMS
 DEPENDENCIES
   active_decorator
   carrierwave
+  cells
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner

@@ -12,7 +12,9 @@
 
   - @products.each do |product|
     %tr
-      %td= product.name
+      %td
+        = product.name
+        = product.label_recommend 
       %td= product.display_image
       %td= product.display_price
       %td= product.display_description
