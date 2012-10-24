@@ -2,10 +2,11 @@ require 'spec_helper'
 
 describe "products/new" do
   before(:each) do
-    assign(:product, stub_model(Product,
+    product = assign(:product, stub_model(Product,
       :name => "MyString",
       :description => "MyText"
     ).as_new_record)
+    ActiveDecorator::Decorator.instance.decorate(product)
   end
 
   it "renders new product form" do

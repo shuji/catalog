@@ -6,6 +6,7 @@ describe "products/show" do
       :name => "Name",
       :description => "MyText"
     ))
+    ActiveDecorator::Decorator.instance.decorate(@product)
   end
 
   it "renders attributes in <p>" do
