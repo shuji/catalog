@@ -3,6 +3,7 @@
 %p.name
   %b Name:
   = @product.name
+  = @product.label_recommend
 %p.image
   = @product.display_image
 %p.price
@@ -12,9 +13,7 @@
   %p
     %b Description:
     = @product.display_description
-%p.recommend
-  %b Recommend:
-  = @product.display_recommend
+  
 
 
 
