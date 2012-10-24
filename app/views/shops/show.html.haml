@@ -1,14 +1,18 @@
 %p#notice= notice
 
-%p
+%p.name
   %b Name:
   = @shop.name
-%p
-  %b Description:
-  = @shop.description
-%p
-  %b Lines summary:
-  = @shop.lines_summary
+.description
+  %p
+    %b Description:
+    = simple_format @shop.description
+.lines_summary
+  %p
+    %b Lines summary:
+    = simple_format @shop.lines_summary
+%p.image
+  = image_tag(@shop.image_url) if @shop.image?
 
 = link_to 'Edit', edit_shop_path(@shop)
 \|
