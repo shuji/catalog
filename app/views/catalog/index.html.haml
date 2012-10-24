@@ -1,2 +1,11 @@
-%h1 Catalog#index
-%p Find me in app/views/catalog/index.html.haml
+%h1 商品カタログ
+- @products.each do |product|
+  %h2
+    = product.name
+  %p
+    = product.price
+  %p
+    = image_tag(product.image_url) if product.image?
+  %p
+    = simple_format product.description
+end
