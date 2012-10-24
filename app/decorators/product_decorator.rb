@@ -14,4 +14,8 @@ module ProductDecorator
     simple_format description
   end
 
+  def display_recommend
+    'X' if recommend?
+  end
+
 end

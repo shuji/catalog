@@ -1,6 +1,7 @@
 Catalog::Application.routes.draw do
   resources :shops
   resources :products
+  match 'recommend' => 'catalog#recommend', as: :recommend
   root to: 'catalog#index'
 
   # The priority is based upon order of creation:

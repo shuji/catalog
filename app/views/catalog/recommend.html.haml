@@ -1,0 +1,11 @@
+%h1 オススメ商品
+- @products.each do |product|
+  %h2
+    = product.name
+  %p
+    = product.display_price
+  %p
+    = product.display_image
+  %p
+    = product.display_description
+
