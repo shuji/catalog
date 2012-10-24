@@ -3,6 +3,7 @@
 %p.name
   %b Name:
   = @product.name
+  = @product.label_recommend
 %p.image
   = @product.display_image
 %p.price
@@ -12,6 +13,9 @@
   %p
     %b Description:
     = @product.display_description
+  
+
+
 
 = link_to 'Edit', edit_product_path(@product)
 \|
