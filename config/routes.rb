@@ -1,9 +1,7 @@
 Catalog::Application.routes.draw do
-  get "catalog/index"
-
   resources :shops
-
   resources :products
+  root to: 'catalog#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
