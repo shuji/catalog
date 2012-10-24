@@ -59,3 +59,10 @@ end
     page.should have_content(lines_summary)
   end
 end
+
+ならば /^エラーメッセージに"(.*?)"が表示されていること$/ do |error_message|
+  within 'div#error_explanation' do
+    page.should have_content(error_message)
+  end
+end
+
