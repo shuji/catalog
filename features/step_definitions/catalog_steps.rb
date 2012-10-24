@@ -12,6 +12,16 @@ end
   click_link link_text
 end
 
+前提 /^以下の内容で店舗が登録されている:$/ do |table|
+  table.hashes.each do |row|
+    Shop.create!(
+      name: row['店舗名'],
+      description: row['説明'],
+      lines_summary: row['取扱商品概要'],
+    )
+  end
+end
+
 もし /^以下の内容で商品を登録する:$/ do |table|
   product_info = table.hashes[0]
   fill_in 'product_name', with: product_info['商品名']
