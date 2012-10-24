@@ -8,6 +8,10 @@ end
   visit "/shops"
 end
 
+前提 /^トップページを表示している$/ do
+  visit "/"
+end
+
 前提 /^"(.*?)"をクリックする$/ do |link_text|
   click_link link_text
 end
@@ -18,6 +22,16 @@ end
       name: row['店舗名'],
       description: row['説明'],
       lines_summary: row['取扱商品概要'],
+    )
+  end
+end
+
+前提 /^以下の内容で商品が登録されている:$/ do |table|
+  table.hashes.each do |row|
+    Product.create!(
+      name: row['商品名'],
+      description: row['説明'],
+      price: row['価格'].to_i,
     )
   end
 end
@@ -42,6 +56,14 @@ end
   visit url_for(Product.where(name: product_name).first)
   within 'p.name' do
     page.should have_content(product_name)
+  end
+end
+
+ならば /^以下の商品が表示されていること:$/ do |table|
+  table.hashes.each do |row|
+    page.should have_content(row['商品名'])
+    page.should have_content(row['価格'])
+    page.should have_content(row['説明'])
   end
 end
 
